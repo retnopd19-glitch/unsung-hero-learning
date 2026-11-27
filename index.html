@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unsung Hero | English Learning</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f7f7f2;color:#263c35}
+header{background:#263c35;color:white;padding:24px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+header h2{margin:0;letter-spacing:2px}
+nav button,.btn{border:0;border-radius:8px;padding:12px 18px;cursor:pointer;font-weight:bold}
+nav button{background:transparent;color:white}
+nav button:hover{background:#476457}
+.hero{padding:65px 8%;background:#dfe9df}
+.hero h1{font-size:clamp(36px,6vw,64px);margin:10px 0}
+.hero p{font-size:18px;max-width:600px;line-height:1.7}
+main{max-width:1050px;margin:auto;padding:35px 20px}
+h2{margin-top:0}
+.card{background:white;border-radius:14px;padding:24px;margin:18px 0;box-shadow:0 3px 15px #0000000a}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.activity{border:1px solid #e2e7df;border-radius:12px;padding:20px;background:white}
+.activity h3{margin-top:0}
+.btn{background:#365b49;color:white;margin-top:10px}
+.btn:hover{background:#213e30}
+.secondary{background:#e4ece3;color:#263c35}
+input,textarea{width:100%;padding:12px;border:1px solid #ccd5cc;border-radius:8px;margin:8px 0 16px;font:inherit}
+textarea{min-height:140px;resize:vertical}
+.section{display:none}
+.section.active{display:block}
+iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:12px}
+footer{text-align:center;padding:25px;background:#263c35;color:white;margin-top:40px}
+.small{color:#68786e;font-size:14px;line-height:1.6}
+.question{padding:12px;background:#f3f6f0;border-radius:8px;margin:10px 0}
+</style>
+</head>
+<body>
+
+<header>
+  <h2>UNSUNG HERO</h2>
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('student')">Student Area</button>
+    <button onclick="showPage('teacher')">Teacher Area</button>
+  </nav>
+</header>
+
+<section id="home" class="section active">
+  <div class="hero">
+    <p>ENGLISH LEARNING EXPERIENCE</p>
+    <h1>UNSUNG HERO</h1>
+    <h2>A Small Act of Kindness</h2>
+    <p>Everyday kindness can make a difference. Explore personal stories, discover the power of kindness, and learn how to tell your own story in English.</p>
+    <button class="btn" onclick="showPage('student')">Start Learning →</button>
+  </div>
+  <main>
+    <div class="grid">
+      <div class="card">
+        <h2>For Students</h2>
+        <p>Watch, explore, reflect, and create your own personal narrative.</p>
+        <button class="btn" onclick="showPage('student')">Enter Student Area</button>
+      </div>
+      <div class="card">
+        <h2>For Teachers</h2>
+        <p>Explore the teaching guide, lesson objectives, and classroom activities.</p>
+        <button class="btn secondary" onclick="showPage('teacher')">Enter Teacher Area</button>
+      </div>
+    </div>
+  </main>
+</section>
+
+<section id="student" class="section">
+  <main>
+    <p class="small">YOUR LEARNING SPACE</p>
+    <h1>Welcome, Learners!</h1>
+    <p>In this unit, you will explore how a small act of kindness can become a meaningful personal story.</p>
+
+    <div class="card">
+      <h2>Watch: Unsung Hero</h2>
+      <p>Watch the video carefully. Think about the actions, emotions, and message of the story.</p>
+      <iframe src="https://www.youtube.com/embed/QDRfGh83DPQ" title="Unsung Hero video" allowfullscreen></iframe>
+    </div>
+
+    <h2>Your Activities</h2>
+    <div class="grid">
+      <div class="activity">
+        <h3>Activity 1</h3>
+        <p>Think about kindness and your own experiences.</p>
+        <button class="btn" onclick="showPage('activity1')">Open Activity</button>
+      </div>
+      <div class="activity">
+        <h3>Activity 2</h3>
+        <p>Explore how a personal narrative is organized.</p>
+        <button class="btn" onclick="showPage('activity2')">Open Activity</button>
+      </div>
+      <div class="activity">
+        <h3>Activity 3</h3>
+        <p>Notice how writers express feelings through actions.</p>
+        <button class="btn" onclick="showPage('activity3')">Open Activity</button>
+      </div>
+      <div class="activity">
+        <h3>Activity 4</h3>
+        <p>Write and develop your own personal narrative.</p>
+        <button class="btn" onclick="showPage('writing')">Open Writing Space</button>
+      </div>
+    </div>
+  </main>
+</section>
+
+<section id="activity1" class="section">
+  <main>
+    <button class="btn secondary" onclick="showPage('student')">← Back to activities</button>
+    <div class="card">
+      <p class="small">ACTIVITY 1</p>
+      <h1>Think About Kindness</h1>
+      <p>After watching the video, reflect on these questions.</p>
+      <div class="question">1. What small acts of kindness did you notice in the video?</div>
+      <div class="question">2. How did the main character's actions affect other people?</div>
+      <div class="question">3. Have you ever experienced or witnessed a similar act of kindness?</div>
+      <label>Your reflection</label>
+      <textarea id="reflection" placeholder="Write your thoughts here..."></textarea>
+      <button class="btn" onclick="saveText('reflection','reflectionStatus')">Save Reflection</button>
+      <p id="reflectionStatus" class="small"></p>
+    </div>
+  </main>
+</section>
+
+<section id="activity2" class="section">
+  <main>
+    <button class="btn secondary" onclick="showPage('student')">← Back to activities</button>
+    <div class="card">
+      <p class="small">ACTIVITY 2</p>
+      <h1>Explore Personal Narratives</h1>
+      <p>A personal narrative tells a story about an experience. Think about how events are introduced, developed, and concluded.</p>
+      <h3>Consider these questions:</h3>
+      <div class="question">1. Where and when did the experience happen?</div>
+      <div class="question">2. Who was involved in the experience?</div>
+      <div class="question">3. What happened first, next, and finally?</div>
+      <div class="question">4. Why was this experience meaningful to the writer?</div>
+    </div>
+  </main>
+</section>
+
+<section id="activity3" class="section">
+  <main>
+    <button class="btn secondary" onclick="showPage('student')">← Back to activities</button>
+    <div class="card">
+      <p class="small">ACTIVITY 3</p>
+      <h1>Show, Don't Just Tell</h1>
+      <p>Writers can communicate emotions through actions, gestures, and details instead of simply naming a feeling.</p>
+      <div class="question"><b>Example:</b><br>
+      Instead of: "I was nervous."<br>
+      Try: "My hands trembled as I looked at the departure screen."</div>
+      <label>Rewrite this sentence to show the feeling through actions:</label>
+      <p class="small">"She was very grateful."</p>
+      <textarea id="showTell" placeholder="Write your sentence here..."></textarea>
+      <button class="btn" onclick="saveText('showTell','showTellStatus')">Save Answer</button>
+      <p id="showTellStatus" class="small"></p>
+    </div>
+  </main>
+</section>
+
+<section id="writing" class="section">
+  <main>
+    <button class="btn secondary" onclick="showPage('student')">← Back to activities</button>
+    <div class="card">
+      <p class="small">ACTIVITY 4</p>
+      <h1>Your Personal Narrative</h1>
+      <p>Write about a meaningful experience involving kindness. You can describe an experience when someone helped you, or when you helped someone else.</p>
+      <label>Your name</label>
+      <input id="studentName" placeholder="Enter your name">
+      <label>Your story title</label>
+      <input id="storyTitle" placeholder="Give your story a title">
+      <label>Your first draft / revised story</label>
+      <textarea id="studentStory" style="min-height:260px" placeholder="Begin writing your personal narrative here..."></textarea>
+      <button class="btn" onclick="saveStory()">Save My Writing</button>
+      <p id="writingStatus" class="small"></p>
+      <p class="small">Your writing is saved in this browser on this device. It is not automatically sent to your teacher.</p>
+    </div>
+  </main>
+</section>
+
+<section id="teacher" class="section">
+  <main>
+    <p class="small">TEACHER RESOURCES</p>
+    <h1>Teacher Area</h1>
+    <div class="card">
+      <h2>Unit Overview</h2>
+      <p><b>Topic:</b> A Small Act of Kindness</p>
+      <p><b>Text type:</b> Personal Narrative</p>
+      <p><b>Target learners:</b> First-year EFL student teachers (B1–B2)</p>
+      <p><b>Duration:</b> Two meetings (2 × 100 minutes)</p>
+    </div>
+    <div class="card">
+      <h2>Learning Objectives</h2>
+      <ul>
+        <li>Organize events in a meaningful sequence.</li>
+        <li>Express emotions through actions and descriptive details.</li>
+        <li>Communicate the significance of a personal experience.</li>
+        <li>Develop and revise a personal narrative.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Teaching Resources</h2>
+      <p><b>Video:</b> Thai Life Insurance – Unsung Hero</p>
+      <p><b>Approach:</b> Text-Driven Learning (Tomlinson, 2019)</p>
+      <p><b>Suggested procedure:</b> Engage learners with the video, invite personal reflection, explore narrative models, guide noticing, and support learners in developing and revising their own stories.</p>
+    </div>
+    <div class="card">
+      <h2>Feedback Reminder</h2>
+      <p>Allow learners to develop and revise their writing before providing teacher feedback. Encourage reflection and learner autonomy during the process.</p>
+    </div>
+  </main>
+</section>
+
+<footer>
+  <p>UNSUNG HERO | A Small Act of Kindness</p>
+  <p class="small" style="color:#dfe9df">An English learning experience</p>
+</footer>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+function saveText(field,status){
+  localStorage.setItem(field,document.getElementById(field).value);
+  document.getElementById(status).textContent='Your answer has been saved on this device.';
+}
+function saveStory(){
+  localStorage.setItem('studentName',document.getElementById('studentName').value);
+  localStorage.setItem('storyTitle',document.getElementById('storyTitle').value);
+  localStorage.setItem('studentStory',document.getElementById('studentStory').value);
+  document.getElementById('writingStatus').textContent='Your writing has been saved on this device.';
+}
+window.addEventListener('load',()=>{
+  ['reflection','showTell','studentName','storyTitle','studentStory'].forEach(id=>{
+    const saved=localStorage.getItem(id);
+    if(saved!==null) document.getElementById(id).value=saved;
+  });
+});
+</script>
+</body>
+</html>
